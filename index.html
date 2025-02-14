@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Sources Across the Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .collapsible {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      margin: 5px 0;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #555;
+    }
+
+    .content {
+      padding: 0 10px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>From Sources Across the Web</h1>
+
+  <!-- Collapsible Section for Source 1 -->
+  <button class="collapsible">Example Article - example.com</button>
+  <div class="content">
+    <p>This is a short summary of the article from example.com. [Read more](https://example.com/article)</p>
+  </div>
+
+  <!-- Collapsible Section for Source 2 -->
+  <button class="collapsible">Another News - example2.com</button>
+  <div class="content">
+    <p>This is a summary from example2.com. [Read more](https://example2.com/news)</p>
+  </div>
+
+  <!-- Collapsible Section for Source 3 -->
+  <button class="collapsible">Tech Update - example3.com</button>
+  <div class="content">
+    <p>This is a summary of the tech update from example3.com. [Read more](https://example3.com/tech)</p>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    for (var i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
